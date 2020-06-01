@@ -1,4 +1,5 @@
 
+<?php include('server.php')?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,9 +16,9 @@
 <body>
 <?php include('header.php') ?>
 
-<?php include('server.php')?>
+
 <?php 
-$user = "SELECT * FROM user where idrole='1'" ;
+$user = "SELECT * FROM user where idrole='2'" ;
 $resultuser = $conn->query($user);
 
 if ($resultuser->num_rows > 0) {

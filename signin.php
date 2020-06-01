@@ -33,7 +33,6 @@ if ($resultuser->num_rows > 0) {
 } else {
   
 }
-header('Location: gestion.php');
-exit();
+
 $conn->close();
 ?>
