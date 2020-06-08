@@ -1,10 +1,12 @@
 
 <?php include('server.php')?>
+<?php include('server1.php')?>
 <?php 
 $v=0;
 $panipro = "SELECT * FROM commande where id_client='" .$_SESSION['iduser']. "'";
 $resultpanipro = $conn->query($panipro);
 $totalepro=0;
+
 if ($resultpanipro->num_rows > 0) {
  
   // output data of each row

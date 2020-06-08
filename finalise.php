@@ -3,6 +3,7 @@
 // Start the session
 session_start();
 ?>
+<?php include("server.php"); ?>
 <!doctype html>
 <html lang="en">
   <head>

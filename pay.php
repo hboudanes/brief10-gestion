@@ -105,7 +105,15 @@ if($b==count($_SESSION['idp'])){
                      
 }
  if($b==count($_SESSION['idp'])){
-             
+   
+    $sql = "UPDATE commande SET pay='1' WHERE id_client='" . $_SESSION['iduser'] ."'";
+
+        if ($conn->query($sql) === TRUE) {
+          echo "Record updated successfully";
+        } else {
+          echo "Error updating record: " . $conn->error;
+        }
+       
   header('Location: paniergbl.php');
           exit();
  }else{

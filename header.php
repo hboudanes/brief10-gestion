@@ -1,6 +1,7 @@
 <?php
-session_start();
-?>
+
+include ('server1.php');?>
+
 <header class="header">  
 <div class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
@@ -21,29 +22,23 @@ session_start();
               <a class="nav-link" href="gestion.php" onclick='ver()'>Accueil
                 <span class="sr-only">(current)</span>
               </a>
-         
-              <?php  
-              if( isset($_SESSION['username']) && isset($_SESSION['pass'])){
-                echo " <li class='nav-item'>
-                <a class='nav-link'  href='#'>" . $_SESSION['username'] . "</a>
-                </li>";
-                echo " <li class='nav-item'  >
-                <a class='nav-link' id='connecte' href='deconnecter.php'>Déconnecter</a>
-                </li>";
-              }else{
-               echo "<li class='nav-item'>
-               <a class='nav-link' href='#' onclick=\"displmodsign('modelin')\" id='connecte'>Connexion</a>
-               </li>
-   
-               <li class='nav-item'>
-                <a class='nav-link' href='#' onclick=\"displmodsign('modelup')\">Inscrire</a>
-               </li>";
-              }
-              ?>
             <li class="nav-item">
               <a class="nav-link" href="paniergbl.php">Painer</a>
             </li>
+            <li class="nav-item">
+            <a href="#" class="nav-link" > <span class="glyphicon glyphicon-user"></span> <?php   if( isset($_SESSION['username'])){
+              echo $_SESSION['username'];
+          
+            }else{
+              echo   " <li class='nav-item' ><a class='nav-link' href='login.php' id='connecte' >login</a> </li>";
+            }; ?>  </a>
+      
+            </li>
+            <li class="nav-item">
+            <a  class="nav-link" href ="gestion.php?logout='1'"><span class="glyphicon glyphicon-user"></span> logout</a>
+            </li>
           </ul>
+     
         </div>
       </div>
     </nav>
